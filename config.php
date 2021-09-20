@@ -13,7 +13,7 @@ $config['db']['name'] = 'sohamservice_shop';
 $config['lang'] = 'fa';
 
 $config['salt'] = 'miladcloudy13758082';
-$config['base'] = "/sohamservice-shop";
+$config['base'] = "";
 $config['route'] = array(
   '/login'     => '/account/login',
   '/ورود'      => '/account/login',
