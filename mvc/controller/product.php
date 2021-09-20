@@ -1,14 +1,11 @@
 <?
 class ProductController {
 
-
-
   public function search($pageIndex = 1) {
     $sortType = post('sortType');
     $keyword  = post('keyword');
     $viewType = post('viewType');
     $filter   = post('filter');
-
 
     // safe filter to prevent SQL Injection
     if($filter == 'wish'){
@@ -16,7 +13,6 @@ class ProductController {
     } else {
       $filter = "1=1";
     }
-
 
     // safe sortType to prevent SQL Injection
     $sortPhrase = '';
@@ -95,7 +91,6 @@ class ProductController {
   }
 
 
-
   public function cart() {
     $cart = $this->getOpenCartOrCreate();
 
@@ -109,8 +104,6 @@ class ProductController {
   }
 
 
-
-
   public function perviewCart() {
     $cart = $this->getOpenCartOrCreate();
 
@@ -121,7 +114,6 @@ class ProductController {
   }
 
 
-
   public function removeFromCart($orderId) {
     ProductModel::remove_order_by_id($orderId);
 
@@ -129,7 +121,6 @@ class ProductController {
     $this->computeAndUpdateCartPrice($cart);
     $this->refreshCartPerview($cart);
   }
-
 
 
   public function addToCart($productId) {
@@ -148,7 +139,6 @@ class ProductController {
   }
 
 
-
   public function changeQuantity() {
     $orderId  = post('orderId');
     $quantity = post('quantity');
@@ -156,13 +146,10 @@ class ProductController {
     ProductModel::update_order_quantity_by_orderId($orderId, $quantity);
   }
 
-
-
   public function refreshCartPerview($cart = null) {
     if ($cart == null) {
       $cart = $this->getOpenCartOrCreate();
     }
-
 
     // get rendered of preview cart view
     $previewData['orders']       = ProductModel::fetch_orders_by_cartId($cart['cart_id']);;
@@ -175,7 +162,6 @@ class ProductController {
 
     echo json_encode($data);
   }
-
 
 
   public function wish() {
@@ -205,7 +191,6 @@ class ProductController {
   }
 
 
-
   private function computeAndUpdateCartPrice($cart = null) {
     if ($cart == null) {
       $cart = $this->getOpenCartOrCreate();
@@ -224,7 +209,6 @@ class ProductController {
 
     return $cartPrice;
   }
-
 
 
   private function findOpenCart() {
@@ -255,7 +239,6 @@ class ProductController {
   }
 
 
-
   private function getOpenCartOrCreate() {
     $userId = getUserId();
 
@@ -270,7 +253,6 @@ class ProductController {
     $cart = $this->findOpenCart();
     return $cart;
   }
-
 
 
   public function perviewInvoicePayed() {
@@ -288,7 +270,6 @@ class ProductController {
   }
 
 
-
   public function perviewInvoiceNoPayed() {
     $db = Db::getInstance();
 
@@ -302,7 +283,6 @@ class ProductController {
     $data['invoiceNoPayeds'] = $invoiceNoPayeds;
     View::render("product/perview-invoice-no-payed.php", $data);
   }
-
 
 
   public function viewPayedOrder($invoiceId) {
@@ -324,7 +304,6 @@ class ProductController {
   }
 
 
-
   public function viewNoPayedOrder($invoiceId) {
     $db = Db::getInstance();
 
@@ -342,8 +321,6 @@ class ProductController {
     $data['noPayedOrders'] = $noPayedOrders;
     View::render("product/view-no-payed-order.php", $data);
   }
-
-
 }
 
 ?>

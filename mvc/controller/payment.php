@@ -1,8 +1,6 @@
 <?
 class PaymentController {
 
-
-
   public function pay($invoiceHash) {
     if(isGuest()){
       $message = "ابتدا عضو سایت شوید تا مرحله پرداخت قابل انجام باشد.";
@@ -37,10 +35,7 @@ class PaymentController {
     if ($geteway == 'zarinpal'){
       $this->zarinpalPaymentRequest($info);
     }
-
   }
-
-
 
   private function zarinpalPaymentRequest($info) {
     global $config;
@@ -73,8 +68,6 @@ class PaymentController {
       $this->fail($message, $code);
     }
   }
-
-
 
   public function zarinpalVerify($invoiceHash) {
     global $config;
@@ -124,33 +117,23 @@ class PaymentController {
     }
   }
 
-
-
   private function openTransaction($info) {
     PaymentModel::open_transaction($info['price'], $info['userId'], $info['authority'], $info['invoiceHash']);
 
   }
-
-
 
   private function closeTransaction($info){
     PaymentModel::close_transaction($info['reference'], $info['invoiceHash']);
     afterCloseTransaction($info);
   }
 
-
-
   private function success($message, $code = ''){
     message('success', $message . $code, true);
   }
 
-
-
   private function fail($message, $code = ''){
     message('fail', $message . $code, true);
   }
-
-
 }
 
 ?>

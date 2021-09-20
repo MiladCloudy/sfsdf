@@ -14,7 +14,6 @@ class TempController {
   }
 
 
-
   public function generateSampleJson() {
     $json = array(
       "Computer Config 1" => array(
@@ -32,9 +31,6 @@ class TempController {
     $jsonEncoded = json_encode($json);
     echo $jsonEncoded;
   }
-
-
-
 }
 
 

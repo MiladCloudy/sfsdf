@@ -46,8 +46,5 @@ class AuthorController {
       'number' => $productId,
     ));
   }
-
-
-
 }
 ?>

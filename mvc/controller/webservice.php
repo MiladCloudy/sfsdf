@@ -1,7 +1,6 @@
 <?
 class WebserviceController {
 
-
   public function test() {
     $json = array(
       'message' => 'success',

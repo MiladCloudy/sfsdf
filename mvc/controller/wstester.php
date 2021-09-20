@@ -1,11 +1,9 @@
 <?
 class WstesterController {
 
-
   public function test() {
     message('success', 'Hello', true);
   }
-
 
 
   public function test1($sortTypeIndex = 1, $keyword = '') {
@@ -29,9 +27,7 @@ class WstesterController {
         echo "</tr>";
       }
     echo "</table>";
-
   }
-
 }
 
 ?>
