@@ -2,7 +2,7 @@
 <br>
 <br>
 <div class="db">
-  <form method="post" action="/author/defineProduct" enctype="multipart/form-data">
+  <form method="post" action="<?=baseUrl()?>/author/defineProduct" enctype="multipart/form-data">
     <input                  class="wrong w200f" name="title"       placeholder="نام محصول"                             ><br><br>
 
     <textarea               class="wrong w100"  name="description" placeholder="توضیحات محصول"       style="resize: none;" rows="10"></textarea><br><br>

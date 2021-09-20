@@ -75,7 +75,7 @@
   <span id="spanTotalPrice"><?=$totalPrice;?></span>&nbsp;<span>ريال</span>
 </div>
 
-<a class="proceedBtn" href="/payment/pay/<?=$invoice_hash?>">
+<a class="proceedBtn" href="<?=baseUrl()?>/payment/pay/<?=$invoice_hash?>">
   <span class="icon ic-credit-card"></span>
   <span>پرداخت سبد خرید</span>
 </a>
@@ -119,7 +119,7 @@
       var orderId = control.data("order-id");
 
       $.ajax({
-        url: "/product/changeQuantity",
+        url: "<?=baseUrl()?>/product/changeQuantity",
         method: 'POST',
         data: {
           'orderId'  : orderId,
@@ -135,7 +135,7 @@
 
   function removeOrder(sender, productId) {
     $.ajax({
-      url: "/product/removeFromCart/" + productId,
+      url: "<?=baseUrl()?>/product/removeFromCart/" + productId,
       method: 'POST',
       dataType: "JSON"
     }).done(function(output) {

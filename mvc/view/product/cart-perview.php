@@ -43,12 +43,12 @@
   <span><?=$totalPrice;?></span>&nbsp;<span>ريال</span>
 </div>
 
-<a class="proceedBtn" href="/payment/pay/<?=$invoice_hash?>">
+<a class="proceedBtn" href="<?=baseUrl()?>/payment/pay/<?=$invoice_hash?>">
   <span class="icon ic-credit-card"></span>
   <span>پرداخت سبد خرید</span>
 </a>
 
-<a class="proceedBtn" href="/product/cart/">
+<a class="proceedBtn" href="<?=baseUrl()?>/product/cart/">
   <span class="icon ic-cart"></span>
   <span>مشاهده سبد خرید</span>
 </a>

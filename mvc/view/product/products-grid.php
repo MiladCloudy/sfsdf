@@ -64,7 +64,7 @@
     var productId = wishBtn.data('product-id');
 
     $.ajax({
-      url: "/user/toggleWishList/1/" + productId,
+      url: "<?=baseUrl()?>/user/toggleWishList/1/" + productId,
       method: 'POST',
       dataType: 'JSON'
     }).done(function (output) {

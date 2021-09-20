@@ -59,10 +59,10 @@ class ProductController {
     if ($products != null) {
       foreach ($products as &$product) {
         if ($product['hasCover'] != 1) {
-          $path = "/image/products/default.png";
+          $path = baseUrl()."/image/products/default.png";
           $alt = "";
         } else {
-          $path = "/image/products/" . $product['product_id'] . ".png";
+          $path = baseUrl()."/image/products/" . $product['product_id'] . ".png";
           $alt = $db->first("SELECT alt FROM seo_image WHERE url=:url", array(
             'url' => $path,
           ), 'alt');

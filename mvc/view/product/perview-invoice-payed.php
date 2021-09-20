@@ -58,7 +58,7 @@
       </td>
 
       <td>
-        <a class="navNoActiveBtn" href="/product/viewPayedOrder/<?=$invoicePayed['invoice_id']?>">
+        <a class="navNoActiveBtn" href="<?=baseUrl()?>/product/viewPayedOrder/<?=$invoicePayed['invoice_id']?>">
           <span class="icon ic-credit-card"></span>
           <span class="invoiceProductPayed">مشاهده</span>
         </a>
