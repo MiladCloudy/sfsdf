@@ -27,4 +27,5 @@ $config['page']['noindex']  = false;
 $config['page']['nofollow'] = false;
 
 $config['zarinpal']['merchantId'] = '556f6731-7994-41f3-8b0e-48a95bef37d4';
+
 ?>
