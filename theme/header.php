@@ -1,4 +1,3 @@
-
 <? $isGuest = isGuest(); ?>
 
 <div id="header-wrapper" class="row">
@@ -12,8 +11,6 @@
     <? if(!$isGuest) { ?>
       <div class="dib p5 fs16">
         <a href="<?=baseUrl()?>/product/wish" class="icon ic-star-full w20f tac" style="font-size: 10pt"></a>
-        <a href="<?=baseUrl()?>/product/perviewInvoicePayed" class="icon ic-list w20f tac" style="font-size: 10pt"></a>
-        <a href="<?=baseUrl()?>/product/perviewInvoiceNoPayed" class="icon ic-list2 w20f tac" style="font-size: 10pt"></a>
         <a href="<?=baseUrl()?>/product/viewInvoice" class="icon ic-bell w20f tac" style="font-size: 10pt"></a>
         <a href="<?=baseUrl()?>/" class="icon ic-home w20f tac" style="font-size: 10pt"></a>
       </div>
@@ -45,11 +42,15 @@
         <span>کاربر گرامی</span>&nbsp; &nbsp; <span><?=session_get('fullname');?></span>
       </div>
 
+      <a href="<?=baseUrl()?>/account/profile" class="sbtn" style="margin-left: 4px; margin-right: 10px; vertical-align: middle;">
+        <span class="icon ic-user-tie"></span>
+        <span><?=_btn_profile?></span>
+      </a>
+
       <a href="<?=baseUrl()?>/logout" class="sbtn" style="margin-left: 4px; margin-right: 10px; vertical-align: middle;">
         <span class="icon ic-exit"></span>
         <span><?=_btn_logout?></span>
       </a>
-
     <? } ?>
   </div>
 </div>

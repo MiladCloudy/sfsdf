@@ -118,7 +118,7 @@ function twoDigitNumber($number) {
 function jdate($date, $format = "Y-m-d") {
   $timestamp = strtotime($date);
   $secondsInOneDay = 24 * 60 * 60;
-  $daysPassed = floor($timestamp / $secondsInOneDay) + 1;
+  $daysPassed = floor($timestamp / $secondsInOneDay);
 
   $days = $daysPassed;
   $day = 11;

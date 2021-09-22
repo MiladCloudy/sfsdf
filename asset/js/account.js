@@ -105,7 +105,6 @@ $(function() {
       $(this).removeClass('correct');
       $(this).addClass('wrong');
     }
-
   });
 
 });

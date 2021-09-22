@@ -24,7 +24,7 @@
 [class*="cols-"], [class*="colx-"], [class*="colm-"]{
   display: table-cell;
   padding: 5px 2.5px;
-  vertical-align: middle;
+  /*vertical-align: middle;*/
 }
 
 [class*="colx-"] {

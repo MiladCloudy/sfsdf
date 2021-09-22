@@ -49,7 +49,6 @@ function isAdmin(){
 }
 
 
-
 function isSuperAdmin(){
   if (isGuest()) {return false;}
 
@@ -61,7 +60,6 @@ function isSuperAdmin(){
 
   return false;
 }
-
 
 
 function isAuthor(){
@@ -77,7 +75,6 @@ function isAuthor(){
 }
 
 
-
 function isVipAuthor(){
   if (isGuest()) {return false;}
 
@@ -89,7 +86,6 @@ function isVipAuthor(){
 
   return false;
 }
-
 
 
 function isVip(){
@@ -105,18 +101,40 @@ function isVip(){
 }
 
 
+function isColleague() {
+  if (isGuest()) {return false;}
+
+  $access = session_get('access');
+
+  if (has_access($access, 'colleague')){
+    return true;
+  }
+
+  return false;
+}
+
+function isRepairman() {
+  if (isGuest()) {return false;}
+
+  $access = session_get('access');
+
+  if (has_access($access, 'repairman')){
+    return true;
+  }
+
+  return false;
+}
+
 
 function isUser(){
   return session_isset('access') ? true: false;
 }
 
 
-
 function isGuest(){
   $userId = getUserId();
   return $userId == 0;
 }
-
 
 
 function grantSuperAdmin(){
@@ -127,14 +145,12 @@ function grantSuperAdmin(){
 }
 
 
-
 function grantAdmin(){
   if (!isAdmin()){
     echo "Forbidden";
     exit;
   }
 }
-
 
 
 function grantAuthor(){
@@ -145,7 +161,6 @@ function grantAuthor(){
 }
 
 
-
 function grantVipAuthor(){
   if (!isVipAuthor()){
     echo "Forbidden";
@@ -154,12 +169,9 @@ function grantVipAuthor(){
 }
 
 
-
 function grantUser(){
   if (isGuest()){
     echo "Forbidden";
     exit;
   }
 }
-
-?>

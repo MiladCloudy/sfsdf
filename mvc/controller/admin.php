@@ -37,7 +37,5 @@ class AdminController {
     echo "OK";
     //View::render("admin/promote_user.php");
   }
-
-
 }
 ?>

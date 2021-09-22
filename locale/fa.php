@@ -14,6 +14,7 @@ define('_header_welcome', "خوش آمدید");
 define('_header_guest', "کاربر مهمان");
 define('_btn_register', "ثبت نام");
 define('_btn_login', "ورود");
+define('_btn_profile', "پنل");
 define('_btn_logout', "خروج");
 define('_btn_signup', "ساخت حساب جدید");
 

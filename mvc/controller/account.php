@@ -1,8 +1,7 @@
 <?
 class AccountController {
 
-  public function __construct() {}
-
+  public function __construct() { }
 
 
   public function logout() {
@@ -16,19 +15,17 @@ class AccountController {
   }
 
 
-
-  public function profile($userId) {
-    echo "User Profile: " . $userId;
+  public function profile() {
+    grantUser();
+    View::render("account/profile.php", array());
   }
-
-
 
   public function login() {
     $email = null;
     $data['msg_error'] = array();
 
-    if(post_isset('btn-submit')) {
-      if(post('captcha') == session_get('captcha')) {
+    if (post_isset('btn-submit')) {
+      if (post('captcha') == session_get('captcha')) {
         $email = post('email');
 
       } else {
@@ -36,7 +33,6 @@ class AccountController {
         View::render("account/login.php", $data);
       }
     }
-
 
     if (!isGuest()) {
       $message = _already_logged_in . session_get('email');
@@ -56,8 +52,8 @@ class AccountController {
 
 
     // check login information to be valid
-    $email     =  post('email');
-    $password  =  post('password');
+    $email = post('email');
+    $password = post('password');
 
     $record = AccountModel::fetch_by_email($email);
 
@@ -66,7 +62,7 @@ class AccountController {
       message('fail', _email_not_registered, true);
     } else {
       $hashedPassword = encryptPassword($password);
-      if ($hashedPassword == $record['password']){
+      if ($hashedPassword == $record['password']) {
 
         session_set('email', $record['email']);
         session_set('fullname', $record['fullname']);
@@ -83,36 +79,35 @@ class AccountController {
   }
 
 
-
   public function captcha($nums) {
     header('Content-text:image/png');
 
     if (session_isset('captcha')) {
 
-      $width  = 170;
+      $width = 170;
       $height = 40;
-      $image  = imagecreate($width, $height);
+      $image = imagecreate($width, $height);
 
       imagecolorallocatealpha($image, 30, 30, 30, 190);
 
       $numbers_color = imagecolorallocate($image, 220, 180, 18);
-      $font_size     = 25;
-      $angle         = 2;
-      $font          = realpath('asset/font/captcha/MATURASC.TTF');
+      $font_size = 25;
+      $angle = 2;
+      $font = realpath('asset/font/captcha/MATURASC.TTF');
 
-      $image_width  = imagesx($image);
+      $image_width = imagesx($image);
       $image_height = imagesy($image);
 
       // Get Bounding Box Size
       $text_box = imagettfbbox($font_size, $angle, $font, $nums);
 
       // Get your Text Width and Height
-      $text_width  = $text_box[2] - $text_box[0];
+      $text_width = $text_box[2] - $text_box[0];
       $text_height = $text_box[7] - $text_box[1];
 
       // Calculate coordinates of the text
-      $x = ($image_width/2)  - ($text_width/2);
-      $y = ($image_height/2) - ($text_height/2);
+      $x = ($image_width / 2) - ($text_width / 2);
+      $y = ($image_height / 2) - ($text_height / 2);
 
       // Add text to image
       imagettftext($image, $font_size, $angle, $x, $y, $numbers_color, $font, $nums);
@@ -126,13 +121,12 @@ class AccountController {
   }
 
 
-
   public function register() {
     $email = null;
     $data['msg_error'] = array();
 
-    if(post_isset('btn-submit')) {
-      if(post('captcha') == session_get('captcha')) {
+    if (post_isset('btn-submit')) {
+      if (post('captcha') == session_get('captcha')) {
         $email = post('email');
 
       } else {
@@ -152,9 +146,9 @@ class AccountController {
 
 
     // check registeration info and register if is valid information
-    $email     = post('email');
-    $name      = post('name');
-    $nickname  = post('nickname');
+    $email = post('email');
+    $name = post('name');
+    $nickname = post('nickname');
 
     $password1 = post('password1');
     $password2 = post('password2');
@@ -163,15 +157,15 @@ class AccountController {
 
     $record = AccountModel::fetch_by_email($email);
 
-    if ($record != null){
+    if ($record != null) {
       message('fail', _already_registered, true);
     }
 
-    if (strlen($password1) < 3 || strlen($password2) < 3){
+    if (strlen($password1) < 3 || strlen($password2) < 3) {
       message('fail', _weak_password, true);
     }
 
-    if ($password1 != $password2){
+    if ($password1 != $password2) {
       message('fail', _password_not_matach, true);
     }
 
@@ -183,12 +177,16 @@ class AccountController {
   }
 
 
-
   //
-  private function loginCheck() {}
-  private function loginForm() {}
-  private function registerCheck() {}
-  private function registerForm() {}
+  private function loginCheck() { }
+
+  private function loginForm() { }
+
+  private function registerCheck() { }
+
+  private function registerForm() { }
 
 }
+
+
 ?>

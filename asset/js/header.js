@@ -21,7 +21,5 @@ $(function() {
   $('#cart-items').hover(function() {
     //$('#cartPerviewHolder').show(1000);
   });
-
-
 });
 

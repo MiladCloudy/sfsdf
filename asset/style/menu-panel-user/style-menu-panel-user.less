@@ -1,0 +1,207 @@
+/*  Style for index.php  */
+.lop-body {
+  background-color: #eee;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.lop-main {
+  width: 400px;
+  margin: 5% auto;
+  margin-top: 10%;
+  background-color: #fff;
+  padding: 15px;
+  display: inline-block;
+  color: #777;
+  font-family:Sans, Tahoma;
+  font-weight:bold;
+  box-shadow: 0 0 3px 1px #CCC;
+  border: 1px solid #CCC;
+}
+
+.lop-main-input {
+  width: 100%;
+  overflow: hidden;
+  margin: 10px auto;
+}
+
+.lop-main-i {
+  width: 90%;
+  border: none;
+  background: #eee;
+  color: #777;
+  padding: 8px;
+  margin: 4px;
+  font-family: Sans;
+  border: 1px solid #ddd;
+}
+
+#submitbtn {
+  background-color: #0bb;
+  color: #FFF;
+  border: none;
+  padding: 5px 10px;
+  font-family: Sans;
+  float: left;
+  margin-top: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#submitbtn:active{
+  box-shadow: 0 0 10px 1px #444 inset;
+}
+
+/*  Style for administrator.php  */
+.body {
+  width: 100%;
+  background-color: #eee;
+  color: #333;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.msgbox {
+  position:absolute;
+  left:10px;
+  bottom: 10px;
+  padding: 3px 5px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #FFF;
+  font-family:Sans;
+  font-size: 20px;
+  font-weight: bold;
+  display: none;
+  z-index: 100;
+}
+
+.wrap {
+  width: 100%;
+  overflow: hidden;
+}
+.wrapright {
+  width: 15%;
+  background-color: #223;
+  float: right;
+  height: 100vh;
+  overflow: hidden;
+  border-left: 1px solid #ccc;
+}
+
+.wrapright-search {
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+}
+.searchinpt {
+  padding: 8px 0;
+  border-radius: 10px;
+  border: none;
+  padding-right: 25px;
+  background-color: #f9f9f9;
+  width: 80%;
+}
+
+#searchlist {
+  position: absolute;
+  width: 90%;
+  max-height: 400px;
+  background-color: #F9F9F9;
+  display:none;
+  color: #222;
+  text-align:right;
+  font-family: Sans;
+  cursor:default;
+  overflow: auto;
+}
+
+#searchlist-item {
+  border-bottom: 1px solid #ccc;
+  padding: 3px 15px;
+}
+
+#searchlist-item:hover {
+  background-color: #EEE;
+}
+
+.wrapright-i {
+  width: 100%;
+  padding: 10px;
+  background-color: #222;
+  font-family: Sans;
+  border-top: 1px solid #ccc;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.wrapright-i:hover {
+  background-color: #eee;
+}
+
+.wrapright-i i {
+  padding: 0 10px;
+}
+
+.wrapright-i-s {
+  border-right: 6px solid #09C;
+  color: #079;
+  font-weight: 600;
+}
+
+#limiter {
+  position:absolute;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(255,255,255,.5);
+  display: none;
+}
+
+.wrapleft {
+  width: 85%;
+  float: left;
+  font-family: Sans;
+  overflow: auto;
+  padding: 5px;
+}
+
+.wrapleft-status {
+  padding: 7px;
+}
+.wrapleft-status-today {
+  float: left;
+}
+
+@media screen and (max-width: 700px) {
+  .lop-main {
+    width: 80%;
+  }
+
+  .body {
+    overflow: auto;
+  }
+
+  .wrapright {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+
+  .wrapleft {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+
+  #searchlist {
+    width: 100%;
+  }
+
+  .wrapleft-status {
+    display: none;
+  }
+}

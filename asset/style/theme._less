@@ -1,5 +1,6 @@
 //11ssaaa
 @import "base.less";
+@import "../style/menu-panel-user/style-menu-panel-user.less";
 @import "elements.less";
 @import "font.less";
 @import "icon.less";
@@ -168,8 +169,10 @@ span:not(a) {
 
 
 #content {
-  max-width: 95%;
+  max-width: 100%;
+  //margin: 70px 0px 0px auto;
   margin: 70px auto 70px auto;
+  //overflow: hidden;
 }
 
 #header-wrapper, #footer-wrapper {

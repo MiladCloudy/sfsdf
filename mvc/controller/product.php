@@ -257,31 +257,59 @@ class ProductController {
 
   public function perviewInvoicePayed() {
     $db = Db::getInstance();
+    $invoicePayeds = $db->query("
+      SELECT  *
+      FROM    x_invoice
 
-    $userId = getUserId();
+      LEFT    OUTER JOIN  x_transaction
+                      ON  x_invoice.hash = x_transaction.invoice_hash
+                      AND x_invoice.user_id = x_transaction.user_id
 
-    $invoicePayeds = $db->query("SELECT * FROM x_invoice LEFT OUTER JOIN x_transaction ON x_invoice.hash=x_transaction.invoice_hash AND x_invoice.user_id=x_transaction.user_id WHERE x_transaction.payed=:payed AND x_transaction.user_id=:user_id", array(
-      'user_id' => $userId,
+      WHERE   x_transaction.payed = :payed
+          AND x_transaction.user_id = :user_id
+    ", array(
+      'user_id' => getUserId(),
       'payed'   => 1,
     ));
 
+    ob_start();
     $data['invoicePayeds'] = $invoicePayeds;
-    View::render("product/perview-invoice-payed.php", $data);
+    View::renderPartial("product/perview-invoice-payed.php", $data);
+    $output = ob_get_clean();
+
+    echo json_encode(array(
+      'status' => true,
+      'html' => $output,
+    ));
   }
 
 
   public function perviewInvoiceNoPayed() {
     $db = Db::getInstance();
+    $invoiceNoPayeds = $db->query("
+      SELECT  *
+      FROM    x_invoice
 
-    $userId = getUserId();
+      LEFT    OUTER JOIN  x_transaction
+                      ON  x_invoice.hash = x_transaction.invoice_hash
+                      AND x_invoice.user_id = x_transaction.user_id
 
-    $invoiceNoPayeds = $db->query("SELECT * FROM x_invoice LEFT OUTER JOIN x_transaction ON x_invoice.hash=x_transaction.invoice_hash AND x_invoice.user_id=x_transaction.user_id WHERE x_transaction.payed!=:payed AND x_transaction.user_id=:user_id", array(
-      'user_id' => $userId,
+      WHERE   x_transaction.payed != :payed
+          AND x_transaction.user_id = :user_id
+    ", array(
+      'user_id' => getUserId(),
       'payed'   => 1,
     ));
 
+    ob_start();
     $data['invoiceNoPayeds'] = $invoiceNoPayeds;
-    View::render("product/perview-invoice-no-payed.php", $data);
+    View::renderPartial("product/perview-invoice-no-payed.php", $data);
+    $output = ob_get_clean();
+
+    echo json_encode(array(
+      'status' => true,
+      'html' => $output,
+    ));
   }
 
 
