@@ -147,7 +147,7 @@ function grantSuperAdmin(){
 
 function grantAdmin(){
   if (!isAdmin()){
-    echo "Forbidden";
+    message('fail', "Forbidden", true);
     exit;
   }
 }
@@ -163,7 +163,7 @@ function grantAuthor(){
 
 function grantVipAuthor(){
   if (!isVipAuthor()){
-    echo "Forbidden";
+    message('fail', "Forbidden", true);
     exit;
   }
 }
@@ -171,7 +171,7 @@ function grantVipAuthor(){
 
 function grantUser(){
   if (isGuest()){
-    echo "Forbidden";
+    message('fail', "Forbidden", true);
     exit;
   }
 }

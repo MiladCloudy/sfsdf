@@ -66,7 +66,7 @@
 
   </div>
 
-  <div id="panel-user" onclick="getPanelUser()" class="tabcontent dn"></div>
+  <div id="panel-user" class="tabcontent dn"></div>
 
   <? if (isRepairman()) { ?>
     <div id="panel-repairman" class="tabcontent dn">

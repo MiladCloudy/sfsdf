@@ -41,5 +41,16 @@ class UserController {
       'html' => $output,
     ));
   }
+
+  public function getDashboard() {
+    ob_start();
+    View::renderPartial("user/user-dashboard.php", array());
+    $output = ob_get_clean();
+
+    echo json_encode(array(
+      'status' => true,
+      'html' => $output,
+    ));
+  }
 }
 ?>
