@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a369064d-2745-4516-a7ff-62ed6ea75529" name="Default" comment="mc-test">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/access.php" afterPath="$PROJECT_DIR$/system/access.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/js/menu-panel-user/functions.js" afterPath="$PROJECT_DIR$/asset/js/menu-panel-user/functions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/js/menu-panel-user/functions.min.js" afterPath="$PROJECT_DIR$/asset/js/menu-panel-user/functions.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mvc/view/user/panel-user.php" afterPath="$PROJECT_DIR$/mvc/view/user/panel-user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mvc/view/account/profile.php" afterPath="$PROJECT_DIR$/mvc/view/account/profile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mvc/controller/user.php" afterPath="$PROJECT_DIR$/mvc/controller/user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="a369064d-2745-4516-a7ff-62ed6ea75529" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sohamservice-shop.iws" />
@@ -594,12 +587,19 @@
       <workItem from="1632377461558" duration="279000" />
       <workItem from="1632493405925" duration="287000" />
       <workItem from="1632647135824" duration="116000" />
-      <workItem from="1633101169827" duration="1089000" />
+      <workItem from="1633101169827" duration="1105000" />
     </task>
+    <task id="LOCAL-00001" summary="mc-test">
+      <created>1633102269203</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1633102269203</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46592000" />
+    <option name="totallyTimeSpent" value="46608000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="4" width="1930" height="1034" extended-state="0" />
@@ -613,7 +613,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32929516" sideWeight="0.50213903" order="10" side_tool="true" content_ui="tabs" x="22" y="372" width="1870" height="298" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32929516" sideWeight="0.50213903" order="10" side_tool="true" content_ui="tabs" x="22" y="372" width="1870" height="298" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289183" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994652" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
